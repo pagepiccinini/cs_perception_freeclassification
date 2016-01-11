@@ -1,0 +1,1 @@
+Lg_Mode	Language	Slide	Correct	St_ErrorEnglish	English	Slide 1	58	2.87English	Spanish	Slide 2	49	4.22English	English	Slide 3	57	3English	Spanish	Slide 4	54	3.87Spanish	English	Slide 1	68	4.2Spanish	Spanish	Slide 2	58	3.52Spanish	English	Slide 3	55	2.86Spanish	Spanish	Slide 4	51	3.4

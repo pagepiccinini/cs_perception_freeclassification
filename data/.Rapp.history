@@ -1,0 +1,295 @@
+db <- read.csv(textConnection(getURL("https://docs.google.com/spreadsheet/pub?key=0Auh5920hdkyhdDBSRXR4eGNGXzlfbnhBVzIzMDcxTlE&single=true&gid=0&output=csv")))
+library(RCurl)
+db <- read.csv(textConnection(getURL("https://docs.google.com/spreadsheet/pub?key=0Auh5920hdkyhdDBSRXR4eGNGXzlfbnhBVzIzMDcxTlE&single=true&gid=0&output=csv")))
+head(db)
+col.names(db)
+colnames(db)
+n2 <- nPlot(Freq ~ Hair, group = 'Eye', data = hair_eye_male, type = 'multiBarChart')
+hair_eye_male <- subset(as.data.frame(HairEyeColor), Sex == "Male")
+n2 <- nPlot(Freq ~ Hair, group = 'Eye', data = hair_eye_male, type = 'multiBarChart')
+library(Rcharts)
+require(devtools)#
+install_github('rCharts', 'ramnathv')
+install_github('rCharts', 'ramnathv')
+library(devtools)
+install_github('rCharts', 'ramnathv')
+## Example 1 Facetted Scatterplot#
+names(iris) = gsub("\\.", "", names(iris))#
+rPlot(SepalLength ~ SepalWidth | Species, data = iris, color = 'Species', type = 'point')
+library(rCharts)
+## Example 1 Facetted Scatterplot#
+names(iris) = gsub("\\.", "", names(iris))#
+rPlot(SepalLength ~ SepalWidth | Species, data = iris, color = 'Species', type = 'point')
+hair_eye = as.data.frame(HairEyeColor)#
+rPlot(Freq ~ Hair | Eye, color = 'Eye', data = hair_eye, type = 'bar')
+hair_eye_male <- subset(as.data.frame(HairEyeColor), Sex == "Male")#
+n1 <- nPlot(Freq ~ Hair, group = "Eye", data = hair_eye_male, type = "multiBarChart")#
+n1$print("chart3")
+n1
+colnames(db)
+plot(db$AgeGroup ~ db$Avg_CA)
+n1
+head(hair_color_male)
+head(hair_eye_male)
+head(db)
+quit()
+install.packages(pkgs="/Users/Page/Desktop/PraatR/", repos=NULL, type="source")
+# Once that's adjusted, go ahead and run the following code.#
+FullPath = function(FileName){#
+DataDirectory = "/Users/Page/Desktop/Tutorial/"#
+return( paste(DataDirectory,FileName,sep="") )#
+} # End function
+FullPath("tone.wav")
+file.exists( FullPath("tone.wav") )
+library("PraatR")
+praat( command="Play", input=FullPath("tone.wav") )
+praat( "Play", input=FullPath("tone.wav") )
+praat( "Down to Matrix", input=FullPath("tone.wav"), output=FullPath("tone_text.Matrix") )
+praat( "Down to Matrix", input=FullPath("tone.wav"), output=FullPath("tone_short.Matrix"), filetype="short" )
+praat( "Down to Matrix", input=FullPath("tone.wav"), output=FullPath("tone_binary.Matrix"), filetype="binary" )
+file.info(FullPath("tone_text.Matrix"))$size   # ~757 KB#
+file.info(FullPath("tone_short.Matrix"))$size  # ~327 KB#
+file.info(FullPath("tone_binary.Matrix"))$size # ~141 KB
+praat( "Convert to stereo", input=FullPath("tone.wav"), output=FullPath("tone_stereo.txt") ) # Note output is .txt
+file.info(FullPath("tone_stereo.txt"))$size # ~1513 KB
+praat( "Convert to stereo", input=FullPath("tone.wav"), output=FullPath("tone_stereo.wav"), filetype="WAV" ) # Note output is .wav
+praat( "Down to Matrix", input=FullPath("tone.wav"), output=FullPath("tone_HeaderlessSpreadsheet.txt"), filetype="headerless spreadsheet" )#
+praat( "Down to Matrix", input=FullPath("tone.wav"), output=FullPath("tone_MatrixText.txt"), filetype="matrix text" )
+praat( "Convert to stereo", input=FullPath("tone.wav"), output=FullPath("tone_stereo.wav"), filetype="WAV" )
+praat( "Convert to stereo", input=FullPath("tone.wav"), output=FullPath("tone_stereo.wav"), filetype="WAV", overwrite=TRUE )
+praat( "Reverse", input=FullPath("tone.wav"), filetype="WAV" )
+praat( "Reverse", input=FullPath("tone.wav"), output=FullPath("tone_reversed.wav"), filetype="WAV" )
+praat("Scale intensity...", arguments=list(38.5), input=FullPath("tone.wav"), output=FullPath("tone_quiet.wav"), filetype="WAV" )
+praat( command="Play", input=FullPath("tone.wav") ) # Original
+praat( command="Play", input=FullPath("tone_quiet.wav") ) # Half volume
+praat( "To Spectrum...", arguments=list(TRUE),  input=FullPath("tone.wav"), output=FullPath("tone.Spectrum"), filetype="binary" )
+praat( "To Spectrum...", arguments=list("yes"), input=FullPath("tone.wav"), output=FullPath("tone.Spectrum"), filetype="binary", overwrite=TRUE )
+praat( "Set part to zero...", arguments=list( 0.1, 0.2, "at exactly these times" ), input=FullPath("tone.wav"), output=FullPath("tone_zeroed.wav"))
+praat( "Play", input=FullPath("tone_zeroed.wav") )
+praat( "Set part to zero...", arguments=list( TimeStart=0.1, TimeEnd=0.2, Cut="at exactly these times" ), input=FullPath("tone.wav"), output=FullPath("tone_zeroed.wav"), overwrite=TRUE)
+praat( "Get total duration", input=FullPath("tone.wav") )
+praat("Get total duration", input=FullPath("tone.wav"), simplify=TRUE )
+as.numeric( praat("Get total duration", input=FullPath("tone.wav"), simplify=TRUE ) )
+praat( "Get time from sample number...", arguments=list(100), input=FullPath("tone.wav") )
+praat( "Get time from sample number...", list(100), FullPath("tone.wav") )
+praat( "Get time from sample number...", input=FullPath("tone.wav"), arguments=list(100) )
+praat( "Play", FullPath("tone.wav") )
+praat( "Play", list(NULL), FullPath("tone.wav") )
+praat( "Play", input=FullPath("tone.wav") )
+praat( "Get time from sample number", arguments=list(100), input=FullPath("tone.wav") )
+quit()
+ls()
+rts= rnorm(3*20*3*4,mean=2, sd=.2)#
+accentgrp=rep(c("none","english","other"),each=20)#
+trialtype=rep(c("cor","mpe","mpo"),each=60)#
+bb=paste("bb",1:60,sep="_")
+ls()
+ls(\)
+ls()
+# Create fake data#
+# 3 groups x 20 babies x 3 types of trials x 4 trials each#
+rts= rnorm(3*20*3*4,mean=2, sd=.2)#
+accentgrp=rep(c("none","english","other"),each=20)#
+trialtype=rep(c("cor","mpe","mpo"),each=60)#
+bb=paste("bb",1:60,sep="_")#
+#
+mydata=cbind(accentgrp,bb,trialtype,rts)#
+#
+summary(mydata)#
+table(mydata[,"accentgrp"],mydata[,"bb"])#
+table(mydata[,"trialtype"],mydata[,"bb"])
+head(my_data)
+head(mydata)
+avg_mean=aggregate(as.numeric(mydata[,"rts"]),by=list(mydata[,"accentgrp"],mydata[,"bb"],mydata[,"trialtype"]),mean,na.rm=T) #NOTE: I assume we might have some NAs if babies quit too early
+avg_mean
+avg_median=aggregate(as.numeric(mydata[,"rts"]),by=list(mydata[,"accentgrp"],mydata[,"bb"],mydata[,"trialtype"]),median,na.rm=T) #NOTE: I assume we might have some NAs if babies quit too early
+head(avg_mean)
+head(avg_median)
+names(avg)<-c("accentgrp","bb","trialtype","art")#
+avg$accentgrp=factor(avg$accentgrp)#
+avg$trialtype =factor(avg$trialtype)
+avg=aggregate(as.numeric(mydata[,"rts"]),by=list(mydata[,"accentgrp"],mydata[,"bb"],mydata[,"trialtype"]),mean,na.rm=T) #NOTE: I assume we might have some NAs if babies quit too early
+names(avg)<-c("accentgrp","bb","trialtype","art")#
+avg$accentgrp=factor(avg$accentgrp)#
+avg$trialtype =factor(avg$trialtype)
+avgnce=subset(avg,accentgrp=="none" & trialtype!="mpo") #I first select the subset nce stands for none, cor, eng
+avgnce
+xtabs(~accengrp, avg)
+xtabs(~accentgrp, avg)
+xtabs(~trialtype, avg)
+head(avgnce)
+xtabs(~accentgrp, agvnce)
+xtabs(~accentgrp, avgnce)
+xtabs(~trialtype, avgnce)
+test = subset(avg, accentgrp=="none" & (trialtype=="cor" | trialtype=="mpe"))
+xtabs(~trialtype, test)
+xtabs(~accentgrp, test)
+avg_n_ce
+avgnce_null=NULL
+avgnce_null
+for(thisaltw in 1:500) avgnce_null<-c(avgnce_null, wilcox.test(avgnce$art~ sample(avgnce$trialtype) )$statistic ) #just 500 to get the flavor
+avgnce_null
+for(thisaltw in 1:500) avgnce_null2<-c(avgnce_null2, wilcox.test(avgnce$art~ sample(avgnce$trialtype) )$statistic ) #just 500 to get the flavor
+actualW=wilcox.test(avgnce$art~avgnce$trialtype)$statistic  #this is the result of the true test
+actualW
+hist(avgnce_null)
+lines(c(quantile(avgnce_null,.975), quantile(avgnce_null,.975)),c(0,100),lty=2)
+lines(c(quantile(avgnce_null,.025), quantile(avgnce_null,.025)),c(0,100),lty=2)
+lines(c(quantile(avgnce_null,.95), quantile(avgnce_null,.95)),c(0,100),lty=3)
+lines(c(quantile(avgnce_null,.05), quantile(avgnce_null,.05)),c(0,100),lty=3)
+lines(c(actualW, actualW),c(0,100),col="red")
+full = c(20, 21, 50, 52)
+sd(full)
+part = c(1, 2)
+sd(part)
+quit()
+library(ISwR)
+plot(rnorm(1000))
+attach(thuesen)
+library(MASS)
+head(MASS)
+pwr.t.test(n = , d = , sig.level = 0.05, power = 0.8, type=c("two.sample"))
+library(pwr)
+pwr.t.test(n = , d = , sig.level = 0.05, power = 0.8, type=c("two.sample"))
+pwr.t.test(n = , d = 0.2, sig.level = 0.05, power = 0.8, type=c("paired"))
+pwr.t.test(n = , d = 0.2, sig.level = 0.05, power = 0.8, type=c("two-sample"))
+pwr.t.test(n = , d = 0.2, sig.level = 0.05, power = 0.8, type=c("two.sample"))
+pwr.t.test(n = , d = 0.2, sig.level = 0.05, power = 0.8, type=c("paired"))
+pwr.t.test(n = 200, d = , sig.level = 0.05, power = 0.8, type=c("paired"))
+pwr.t.test(n = 198.1508, d = , sig.level = 0.05, power = 0.8, type=c("paired"))
+# Read in library#
+library(pwr)#
+#
+# Calculate needed sample size for paired t-test based on different d levels#
+	# d of 0.2#
+pwr.t.test(n = , d = 0.2, sig.level = 0.05, power = 0.8, type=c("paired"))#
+#
+	# d of 0.35#
+pwr.t.test(n = , d = 0.35, sig.level = 0.05, power = 0.8, type=c("paired"))#
+#
+	# d of 0.5#
+pwr.t.test(n = , d = 0.5, sig.level = 0.05, power = 0.8, type=c("paired"))#
+#
+	# d of 0.65#
+pwr.t.test(n = , d = 0.65, sig.level = 0.05, power = 0.8, type=c("paired"))
+quit()
+setwd("~/Desktop/Experiments/CS E-S Perception 2 - like Free Classification/Results/R/Data")#
+#
+	# READ IN PACKAGES#
+library(lme4)#
+#
+	# READ IN DATA AND ORGANIZE#
+data = read.table("data_full.txt", header=T, sep="\t")#
+data = subset(data, Condition=="A_E")#
+#
+	# MODIFY MAIN EFFECTS#
+contrasts(data$Inst_Lg) = c(-0.5, 0.5)#
+data$Inst_LgContrast <- contrasts(data$Inst_Lg)[,1][as.numeric(data$Inst_Lg)]#
+#
+contrasts(data$Slide) = c(1, 2, 3, 4)#
+data$SlideContrast <- contrasts(data$Slide)[,1][as.numeric(data$Slide)]
+head(data)
+data_full.lmer = glmer(Error ~ Inst_LgContrast * SlideContrast + (1+SlideContrast|Subject) + (1|Sound.File), family="binomial", data=data, REML=F)
+data_noinstlg.lmer = glmer(Error ~ Inst_LgContrast * SlideContrast - Inst_LgContrast + (1+SlideContrast|Subject) + (1|Sound.File), family="binomial", data=data, REML=F)
+anova(data_full.lmer, data_noinstlg.lmer)
+data_full.lmer = glmer(Error ~ Inst_LgContrast * SlideContrast + (1+SlideContrast|Subject), family="binomial", data=data, REML=F)
+data_noinstlg.lmer = glmer(Error ~ Inst_LgContrast * SlideContrast - Inst_LgContrast + (1+SlideContrast|Subject), family="binomial", data=data, REML=F)
+anova(data_full.lmer, data_noinstlg.lmer)
+setwd("~/Desktop/Experiments/CS E-S Perception 2 - like Free Classification/Results/R/Data")#
+#
+	# READ IN PACKAGES#
+library(lme4)#
+#
+	# READ IN DATA AND ORGANIZE#
+data = read.table("data_full.txt", header=T, sep="\t")#
+data = subset(data, Condition=="A_E")#
+#
+	# MODIFY MAIN EFFECTS#
+contrasts(data$Inst_Lg) = c(-0.5, 0.5)#
+data$Inst_LgContrast <- contrasts(data$Inst_Lg)[,1][as.numeric(data$Inst_Lg)]#
+#
+contrasts(data$Language) = c(-0.5, 0.5)#
+data$LanguageContrast <- contrasts(data$Language)[,1][as.numeric(data$Language)]
+head(data)
+xtabs(~Sound.File, data)
+xtabs(~Subject, data)
+data_full.lmer = glmer(Error ~ Inst_LgContrast * LanguageContrast + (1+LanguageContrast|Subject), family="binomial", data=data, REML=F)
+data_noinstlg.lmer = glmer(Error ~ Inst_LgContrast * LanguageContrast - Inst_LgContrast + (1+LanguageContrast|Subject), family="binomial", data=data, REML=F)
+anova(data_full.lmer, data_noinstlg.lmer)
+data_full.lmer = glmer(Error ~ Inst_LgContrast * LanguageContrast + (1+LanguageContrast|Subject) + (1+Inst_LgContrast|Sound.File), family="binomial", data=data, REML=F)
+data_noinstlg.lmer = glmer(Error ~ Inst_LgContrast * LanguageContrast - Inst_LgContrast + (1+LanguageContrast|Subject) + (1|Sound.File), family="binomial", data=data, REML=F)
+data_full.lmer = glmer(Error ~ Inst_LgContrast * LanguageContrast + (1+LanguageContrast|Subject) + (1|Sound.File), family="binomial", data=data, REML=F)
+# LMER TO TEST MAIN EFFECTS#
+data_full.lmer = glmer(Error ~ Inst_LgContrast * LanguageContrast + (1+LanguageContrast|Subject), family="binomial", data=data, REML=F)#
+#
+	# LMER WITHOUT LANGUAGE OF INSTRUCTION#
+data_noinstlg.lmer = glmer(Error ~ Inst_LgContrast * LanguageContrast - Inst_LgContrast + (1+LanguageContrast|Subject), family="binomial", data=data, REML=F)#
+#
+anova(data_full.lmer, data_noinstlg.lmer)
+# LMER WITHOUT LANGUAGE#
+data_nolanguage.lmer = glmer(Error ~ Inst_LgContrast * LanguageContrast - LanguageContrast + (1+LanguageContrast|Subject), family="binomial", data=data, REML=F)#
+#
+anova(data_full.lmer, data_nolanguage.lmer)
+# LMER WITHOUT LANGUAGE OF INSTRUCTION X LANGUAGE
+# LMER WITHOUT LANGUAGE OF INSTRUCTION X LANGUAGE#
+data_noinstlglanguageint.lmer = glmer(Error ~ Inst_LgContrast * LanguageContrast - Inst_LgContrast:LanguageContrast + (1+LanguageContrast|Subject), family="binomial", data=data, REML=F)#
+#
+anova(data_full.lmer, data_noinstlgThlanguageint.lmer)
+anova(data_full.lmer, data_noinstlglanguageint.lmer)
+# SET WORKING DIRECTORY#
+setwd("~/Desktop/Experiments/CS E-S Perception 2 - like Free Classification/Results/R/Data")#
+# READ IN PACKAGES#
+library(lme4)#
+# READ IN DATA AND ORGANIZE#
+data = read.table("data_full.txt", header=T, sep="\t")#
+data = subset(data, Condition=="A_E")#
+#
+# Modify main effects#
+contrasts(data$Inst_Lg) = c(-0.5, 0.5)#
+data$Inst_LgContrast <- contrasts(data$Inst_Lg)[,1][as.numeric(data$Inst_Lg)]#
+#
+contrasts(data$Slide) = c(1, 2, 3, 4)#
+data$SlideContrast <- contrasts(data$Slide)[,1][as.numeric(data$Slide)]
+data_full.lmer = glmer(Error ~ Inst_LgContrast * SlideContrast + (1+SlideContrast|Subject) + (1+Inst_LgContrast|Sound.File), family="binomial", data=data, REML=F)
+data_full.lmer = glmer(Error ~ Inst_LgContrast * SlideContrast + (1+SlideContrast|Subject) + (1|Sound.File), family="binomial", data=data, REML=F)
+data_noinstlg.lmer = glmer(Error ~ Inst_LgContrast * SlideContrast - Inst_LgContrast + (1|Subject) + (1|Sound.File), family="binomial", data=data, REML=F)
+data_noinstlg.lmer = glmer(Error ~ Inst_LgContrast * SlideContrast - Inst_LgContrast + (1+SlideContrast|Subject) + (1|Sound.File), family="binomial", data=data, REML=F)
+data_noslide.lmer = glmer(Error ~ Inst_LgContrast * SlideContrast - SlideContrast + (1+SlideContrast|Subject) + (1|Sound.File), family="binomial", data=data, REML=F)
+data_noinstlgslideint.lmer = glmer(Error ~ Inst_LgContrast * SlideContrast - Inst_LgContrast:SlideContrast + (1+SlideContrast|Subject) + (1|Sound.File), family="binomial", data=data, REML=F)
+anova(data_full.lmer, data_noinstlg.lmer)
+summary(data_full.lmer)
+anova(data_full.lmer, data_noinstlg.lmer)
+anova(data_full.lmer, data_noslide.lmer)
+anova(data_full.lmer, data_noinstlgslideint.lmer)
+data_full.lmer = glmer(Error ~ Inst_LgContrast * SlideContrast + (1+SlideContrast|Subject) + (1|Sound.File), family="binomial", data=data, REML=F)
+data_noinstlg.lmer = glmer(Error ~ Inst_LgContrast * SlideContrast - Inst_LgContrast + (1+SlideContrast|Subject) + (1|Sound.File), family="binomial", data=data, REML=F)
+data_noslide.lmer = glmer(Error ~ Inst_LgContrast * SlideContrast - SlideContrast + (1+SlideContrast|Subject) + (1|Sound.File), family="binomial", data=data, REML=F)
+data_noinstlgslideint.lmer = glmer(Error ~ Inst_LgContrast * SlideContrast - Inst_LgContrast:SlideContrast + (1+SlideContrast|Subject) + (1|Sound.File), family="binomial", data=data, REML=F)
+anova(data_full.lmer, data_noinstlg.lmer)
+anova(data_full.lmer, data_noslide.lmer)
+anova(data_full.lmer, data_noinstlgslideint.lmer)
+data_full.lmer = glmer(Error ~ Inst_LgContrast * SlideContrast + (1+SlideContrast|Subject), family="binomial", data=data, REML=F)
+data_noinstlg.lmer = glmer(Error ~ Inst_LgContrast * SlideContrast - Inst_LgContrast + (1+SlideContrast|Subject), family="binomial", data=data, REML=F)
+data_noslide.lmer = glmer(Error ~ Inst_LgContrast * SlideContrast - SlideContrast + (1+SlideContrast|Subject), family="binomial", data=data, REML=F)
+data_noinstlgslideint.lmer = glmer(Error ~ Inst_LgContrast * SlideContrast - Inst_LgContrast:SlideContrast + (1+SlideContrast|Subject), family="binomial", data=data, REML=F)
+anova(data_full.lmer, data_noinstlg.lmer)
+anova(data_full.lmer, data_noslide.lmer)
+anova(data_full.lmer, data_noinstlgslideint.lmer)
+data_full.lmer = glmer(Error ~ Inst_LgContrast * SlideContrast + (1+SlideContrast|Subject) + (1|Sound.File), family="binomial", data=data, REML=F)
+summary(data_full.lmer)
+# Interaction of language of instruction and slide number#
+data_noinstlgslideint.lmer = glmer(Error ~ Inst_LgContrast * SlideContrast - Inst_LgContrast:SlideContrast + (1+SlideContrast|Subject) + (1|Sound.File), family="binomial", data=data, REML=F)#
+#
+anova(data_full.lmer, data_noinstlgslideint.lmer)
+data_e = subset(data, Inst_Lg=="E")
+data_s = subset(data, Inst_Lg=="S")
+summary(data_e_full.glm)
+data_e_full.glm = glm(Error ~ SlideContrast, data=data_e)
+summary(data_e_full.glm)
+data_s_full.glm = glm(Error ~ SlideContrast, data=data_s)
+summary(data_s_full.glm)
+data_e_full.glm = glm(Error ~ SlideContrast, data=data_e, family="binomial")
+summary(data_e_full.glm)
+data_s_full.glm = glm(Error ~ SlideContrast, data=data_s, family="binomial")
+summary(data_s_full.glm)
+quit()
