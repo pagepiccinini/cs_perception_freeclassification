@@ -1,1 +1,0 @@
-Lg_Mode	Language	Correct	St_ErrorEnglish	English	57.5	2.39English	Spanish	51.5	2.93Spanish	English	61.5	2.74Spanish	Spanish	54.5	2.34
